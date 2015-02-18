@@ -1,0 +1,14 @@
+<%= render 'nav' %>
+
+<h1 class="heading text-capitalize">
+	<!--<div class="avatar"><%#= image_tag @user.avatar.url(:thumb) %></div>-->
+	<%= @user.name %>
+</h1>
+
+<div class="row">
+	<div class="col-md-2 text-center"><%= link_to image_tag('books.png', class: 'circles'), books_path(user_id: @user.id) %></div>
+	<div class="col-md-2 text-center"><%= link_to image_tag('comics.png', class: 'circles'), comics_path(user_id: @user.id) %></div>
+	<div class="col-md-2 text-center"><%= link_to image_tag('graphic.png', class: 'circles'), graphic_novels_path(user_id: @user.id) %></div>
+	<div class="col-md-2 text-center"><%= link_to image_tag('movies.png', class: 'circles'), movies_path(user_id: @user.id) %></div>
+	<div class="col-md-2 text-center"><%= link_to image_tag('tv.png', class: 'circles'), tv_seasons_path(user_id: @user.id) %></div>
+</div>

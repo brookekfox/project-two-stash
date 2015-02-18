@@ -1,0 +1,17 @@
+<%= render 'users/nav' %>
+<h1 class="heading">Add a TV Season!</h1>
+
+<%= form_for @tv_season do |f| %>
+	User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
+	Title:  		 <%= f.text_field :title %><br>
+	Season: 		 <%= f.text_field :season %><br>
+	Year:        <%= f.number_field :year %><br>
+	Show Runner: <%= f.text_field :show_runner %><br>
+	Network:     <%= f.text_field :network %><br>
+	Format:      <%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
+	<%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br>
+	Loaned Out?: <%= f.check_box :is_loaned %><br><br>
+
+	<%= f.submit 'Add this TV season!' %><br>
+	<p class="ruby-link"><%= link_to 'Cancel', tv_seasons_path %></p>
+<% end %>

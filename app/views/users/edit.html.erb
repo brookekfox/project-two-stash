@@ -1,0 +1,13 @@
+<h1 class="heading">Hey, dum dum!</h1>
+
+<div class="ruby-form">
+	<%= form_for @user do |f| %>
+		Name:             <%= f.text_field :name %><br>
+		Email:            <%= f.text_field :email %><br><br>
+		<!--New Password:     <%#= f.password_field :password %><br>-->
+		<!--Confirm Password: <%#= f.password_field :password_confirmation %><br>-->
+		<!--Profile picture:  <%#= f.file_field :avatar %><br><br>-->
+
+		<%= f.submit %>
+	<% end %>
+</div>

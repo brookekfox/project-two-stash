@@ -1,0 +1,112 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+$light-gray: #f0f0f0;
+$heading-font: 'Pacifico', cursive;
+$body-font: 'Oswald', sans-serif;
+
+body {
+  background-image: url('http://www.psdgraphics.com/file/colorful-triangles-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.heading {
+  font-size: 72pt;
+  font-family: $heading-font;
+  color: $light-gray;
+}
+h2 {
+  font-size: 52pt;
+  font-family: $heading-font;
+  color: $light-gray;
+}
+.index-list {
+  border: 4px double $light-gray;
+  border-radius: 15px;
+  padding: 5%;
+  margin: 10% auto;
+  width: 90%;
+  background-color: rgba(255,0,127,.6);
+  color: $light-gray;
+}
+th {
+  font-family: $body-font;
+  font-size: 24pt;
+  padding: 1%;
+  width: 250px;
+  vertical-align: bottom;
+  text-align: left;
+}
+td {
+  font-family: $body-font;
+  font-size: 16pt;
+  padding: 1%;
+  width: 250px;
+  vertical-align: bottom;
+}
+.ruby-link {
+  color: $light-gray;
+  font-family: $body-font;
+  font-size: 14pt;
+  border: 2px solid $light-gray;
+  border-radius: 50%;
+  background: rgba(240,240,240,.7);
+  padding: 2%;
+  width: 100px;
+  height: 100px;
+}
+.ruby-form {
+  border: 4px double $light-gray;
+  border-radius: 40px;
+  padding: 5%;
+  margin: 10% auto;
+  width: 80%;
+  background-color: rgba(255,0,127,.6);
+  color: $light-gray;
+  font-family: $body-font;
+  font-size: 14pt;
+  text-align: center;
+}
+.info-list {
+  border: 4px double $light-gray;
+  border-radius: 40px;
+  padding: 5%;
+  margin: 0 auto;
+  background-color: rgba(255,0,127,.6);
+  color: $light-gray;
+  font-family: $body-font;
+  font-size: 18pt;
+  width: 70%;
+}
+.list-of-stuff {
+  border: 4px double $light-gray;
+  border-radius: 40px;
+  padding: 5%;
+  margin: 0 auto;
+  background-color: rgba(255,0,127,.6);
+  color: $light-gray;
+  font-family: $body-font;
+  font-size: 18pt;
+  width: 70%;
+}
+.nav-bar {
+  height: 250px;
+  width: 100%;
+  background-color: #ffffff;
+}
+.circles {
+  height: 300px;
+}
+.small-circle {
+  height: 180px;
+}
+.logo {
+  height: 70px;
+}
+.avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid $light-gray;
+}

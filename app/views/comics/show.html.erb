@@ -1,0 +1,18 @@
+<%= render 'users/nav' %>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading text-capitalize"><%= @comic.title %></h1></div>
+	<div class="col-md-6 text-center">
+		<%= link_to image_tag('delete.png', class: 'small-circle'), @comic, method: :delete, data: {confirm: "Are you
+		sure?"} %>
+		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_comic_path(@comic) %>
+		<%= link_to image_tag('cancel.png', class: 'small-circle'), user_path(session['user_id']) %>
+	</div>
+</div>
+
+<div class="info-list">
+	<p>Number: <%= @comic.number %></p>
+	<p class="text-capitalize">Publisher: <%= @comic.publisher %></p>
+	<p class="text-capitalize">Location: <%= @comic.comic_box %></p>
+	<p class="text-capitalize">Loaned Out?: <%= @comic.is_loaned %></p>
+</div>

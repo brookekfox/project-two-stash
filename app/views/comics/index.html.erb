@@ -1,0 +1,36 @@
+<%= render 'users/nav' %>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Comics</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('add.png', class: 'small-circle'), new_comic_path %></div>
+</div>
+
+<div class="index-list">
+	<table>
+		<thead>
+		<tr>
+			<th>Title</th>
+			<th>Number</th>
+			<th>Publisher</th>
+			<th>Location</th>
+			<th>Loaned Out</th>
+			<th colspan="5"></th>
+		</tr>
+		</thead>
+
+		<tbody>
+		<% @comics.sort_by { |c| c[:title] }.each do |comic| %>
+			<tr>
+				<td class="text-capitalize"><%= comic.title %></td>
+				<td><%= comic.number %></td>
+				<td class="text-capitalize"><%= comic.publisher  %></td>
+				<td class="text-capitalize"><%= comic.comic_box %></td>
+				<td class="text-capitalize"><%= comic.is_loaned %></td>
+				<td><%= link_to 'View', comic %>
+					<%= link_to 'Delete', comic, method: :delete, data: {confirm: "Are you sure?"} %>
+					<%= link_to 'Edit', edit_comic_path(comic) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

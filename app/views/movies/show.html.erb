@@ -1,0 +1,17 @@
+<%= render 'users/nav' %>
+<h1 class="heading"><%= @movie.title %></h1>
+
+<div class="info-list">
+	<p>Year: <%= @movie.year %></p>
+	<p>Director: <%= @movie.director %></p>
+	<p>Writer: <%= @movie.writer %></p>
+	<p>Rotten Tomatoes Score: <%= @movie.rotten_tomatoes %></p>
+	<p>Format: <%= @movie.format %></p>
+	<p>Loaned Out?: <%= @movie.is_loaned %></p>
+</div>
+
+<br><br>
+<p class="link">
+	<%= link_to 'Delete this movie!', @movie, method: :delete, data: {confirm: "Are you sure?"} %><br>
+	<%= link_to 'Edit this movie!', edit_movie_path(@movie) %><br>
+</p>

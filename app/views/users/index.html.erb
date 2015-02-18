@@ -1,0 +1,34 @@
+<%#= render 'nav' %>
+<h1 class="heading">Users</h1>
+
+<table class="index-list">
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Books</th>
+		<th>Comics</th>
+		<th>Graphic Novels</th>
+		<th>Movies</th>
+		<th>TV Seasons</th>
+		<th>Actions</th>
+		<th colspan="8"></th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @users.sort_by{ |u| u[:name] }.each do |user| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+		<tr>
+			<td><%= user.name %></td>
+			<td><%= user.email %></td>
+			<td><%= user.books.count %></td>
+			<td><%= user.comics.count %></td>
+			<td><%= user.graphic_novels.count %></td>
+			<td><%= user.movies.count %></td>
+			<td><%= TvSeason.where(user_id: user.id).count %></td>
+			<td><%= link_to 'Delete', user, method: :delete, data: {confirm: "Are you sure?"} %>
+				<%#= link_to 'View', user %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

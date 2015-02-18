@@ -1,0 +1,18 @@
+<%= render 'users/nav' %>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading"><%= @graphic_novel.title %></h1></div>
+	<div class="col-md-6 text-center">
+		<%= link_to image_tag('delete.png', class: 'small-circle'), @graphic_novel, method: :delete, data: {confirm: "Are you
+		sure?"} %>
+		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_graphic_novel_path(@graphic_novel) %>
+		<%= link_to image_tag('cancel.png', class: 'small-circle'), user_path(session['user_id']) %>
+	</div>
+</div>
+
+<div class="info-list">
+	<p class="text-capitalize">Author: <%= @graphic_novel.author %></p>
+	<p class="text-capitalize">Number: <%= @graphic_novel.number %></p>
+	<p class="text-capitalize">Publisher: <%= @graphic_novel.publisher %></p>
+	<p class="text-capitalize">Loaned Out?: <%= @graphic_novel.is_loaned %></p>
+</div>

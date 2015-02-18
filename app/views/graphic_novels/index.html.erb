@@ -1,0 +1,36 @@
+<%= render 'users/nav' %>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Graphic Novels</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('add.png', class: 'small-circle'), new_graphic_novel_path %></div>
+</div>
+
+<div class="index-list">
+	<table>
+		<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Number</th>
+			<th>Publisher</th>
+			<th>Loaned Out</th>
+			<th colspan="5"></th>
+		</tr>
+		</thead>
+
+		<tbody>
+		<% @graphic_novels.sort_by { |gn| gn[:title] }.each do |graphic| %>
+			<tr>
+				<td class="text-capitalize"><%= graphic.title %></td>
+				<td class="text-capitalize"><%= graphic.author %></td>
+				<td><%= graphic.number %></td>
+				<td class="text-capitalize"><%= graphic.publisher  %></td>
+				<td class="text-capitalize"><%= graphic.is_loaned %></td>
+				<td><%= link_to 'View', graphic %>
+					<%= link_to 'Delete', graphic, method: :delete, data: {confirm: "Are you sure?"} %>
+					<%= link_to 'Edit', edit_graphic_novel_path(graphic) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

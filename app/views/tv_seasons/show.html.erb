@@ -1,0 +1,17 @@
+<%= render 'users/nav' %>
+<h1 class="heading"><%= @tv_season.title %></h1>
+
+<div class="info-list">
+	<p>Season:      <%= @tv_season.season %></p>
+	<p>Year:        <%= @tv_season.year %></p>
+	<p>Show Runner: <%= @tv_season.show_runner %></p>
+	<p>Network:     <%= @tv_season.network %></p>
+	<p>Format:      <%= @tv_season.format %></p>
+	<p>Loaned Out?: <%= @tv_season.is_loaned %></p>
+</div>
+
+<br><br>
+<p class="link">
+	<%= link_to 'Delete this TV Season!', @tv_season, method: :delete, data: {confirm: "Are you sure?"} %><br>
+	<%= link_to 'Edit this TV Season!', edit_tv_season_path(@tv_season) %><br>
+</p>

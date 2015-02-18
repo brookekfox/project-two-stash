@@ -1,0 +1,12 @@
+<h1 class="heading">Hey dum dum, log in!</h1>
+
+<div class="ruby-form">
+	<%= form_for @user, url: { controller: 'sessions', action: 'create' } do |f| %>
+		Email:    <%= f.text_field :email %><br />
+		Password: <%= f.password_field :password %><br /><br />
+
+		<%= f.submit 'Log In' %>
+	<% end %>
+
+	<%= link_to 'Create a new user!', new_user_path %>
+</div>

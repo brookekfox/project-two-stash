@@ -1,0 +1,40 @@
+<%= render 'users/nav' %>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Books</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('add.png', class: 'small-circle'), new_book_path %></div>
+</div>
+
+<!--<div class="total-things-background"><img src="/assets/logo-blank.png">-->
+<!--<div class="total-things"><%#= Book.where(user_id: session['user_id']).count %></div>-->
+<!--</div>-->
+
+<div class="index-list">
+	<table>
+		<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+			<th>Loaned Out</th>
+			<th>Actions</th>
+			<th colspan="5"></th>
+		</tr>
+		</thead>
+
+		<tbody>
+		<% @books.sort_by { |b| b[:title] }.each do |book| %>
+			<tr>
+				<!--<td><%#= book.user.name %></td>-->
+				<td class="text-capitalize"><%= book.title %></td>
+				<td class="text-capitalize"><%= book.author_first %> <%= book.author_last %></td>
+				<td class="text-capitalize"><%= book.year %></td>
+				<td class="text-capitalize"><%= book.is_loaned %></td>
+				<td><%= link_to 'View', book %>
+					<%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
+					<%= link_to 'Edit', edit_book_path(book) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>
