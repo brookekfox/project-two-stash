@@ -1,7 +1,7 @@
 <%= render 'users/nav' %>
 
 <div class="row">
-	<div class="col-md-6 text-center"><h1 class="heading"><%= @graphic_novel.title %></h1></div>
+	<div class="col-md-6 text-center"><h1 class="heading text-capitalize"><%= @graphic_novel.title %></h1></div>
 	<div class="col-md-6 text-center">
 		<%= link_to image_tag('delete.png', class: 'small-circle'), @graphic_novel, method: :delete, data: {confirm: "Are you
 		sure?"} %>

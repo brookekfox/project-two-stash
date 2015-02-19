@@ -1,7 +1,7 @@
 <%= render 'users/nav' %>
 
 <div class="row">
-	<div class="col-md-6 text-center"><h1 class="heading">Update <%= @book.title %></h1></div>
+	<div class="col-md-6 text-center"><h1 class="heading text-capitalize">Update <%= @book.title %></h1></div>
 	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), books_path(session['user_id']) %></div>
 </div>
 

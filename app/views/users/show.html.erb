@@ -1,9 +1,8 @@
 <%= render 'nav' %>
 
-<h1 class="heading text-capitalize">
-	<!--<div class="avatar"><%#= image_tag @user.avatar.url(:thumb) %></div>-->
-	<%= @user.name %>
-</h1>
+<div class="row">
+	<div class="col-md-4 text-center"><h1 class="heading text-capitalize"><%= @user.name %></h1></div>
+</div>
 
 <div class="row">
 	<div class="col-md-2 text-center"><%= link_to image_tag('books.png', class: 'circles'), books_path(user_id: @user.id) %></div>

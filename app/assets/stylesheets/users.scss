@@ -7,6 +7,7 @@ $body-font: 'Oswald', sans-serif;
 
 body {
   background-image: url('http://www.psdgraphics.com/file/colorful-triangles-background.jpg');
+//  background-image: url(assets/colorful-triangles-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -25,7 +26,7 @@ h2 {
   border: 4px double $light-gray;
   border-radius: 15px;
   padding: 5%;
-  margin: 10% auto;
+  margin: 0 auto;
   width: 95%;
   background-color: rgba(255,0,127,.6);
   color: $light-gray;
@@ -74,7 +75,7 @@ td {
   padding: 5%;
   margin: 0 auto;
   background-color: rgba(255,0,127,.6);
-  color: $light-gray;
+  color: darkblue;
   font-family: $body-font;
   font-size: 18pt;
   width: 70%;
@@ -102,11 +103,12 @@ td {
   height: 180px;
 }
 .logo {
-  height: 70px;
+  height: 80px;
+  margin-top: -50px;
+  padding: 10px;
 }
-.avatar {
+.dropdown-logo {
   height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px solid $light-gray;
+//  margin-top: -50px;
+//  padding: 10px;
 }

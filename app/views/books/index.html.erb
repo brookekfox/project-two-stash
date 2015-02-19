@@ -23,15 +23,15 @@
 		</thead>
 
 		<tbody>
-		<% @books.sort_by { |b| b[:title].downcase }.each do |book| %>
+		<% @books.sort_by { |b| b[:author_last].downcase }.each do |book| %>
 			<tr>
 				<td class="text-capitalize"><%= book.title %></td>
 				<td class="text-capitalize"><%= book.author_first %> <%= book.author_last %></td>
 				<td class="text-capitalize"><%= book.year %></td>
 				<td class="text-capitalize"><%= book.is_loaned %></td>
 				<td><%= link_to 'View', book %>
-					<%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
-					<%= link_to 'Edit', edit_book_path(book) %></td>
+					  <%= link_to 'Delete', book, method: :delete, data: {confirm: "Are you sure?"} %>
+					  <%= link_to 'Edit', edit_book_path(book) %></td>
 			</tr>
 		<% end %>
 		</tbody>

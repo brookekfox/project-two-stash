@@ -1,7 +1,7 @@
 <%= render 'users/nav' %>
 
 <div class="row">
-	<div class="col-md-6 text-center"><h1 class="heading"><%= @tv_season.title %></h1></div>
+	<div class="col-md-6 text-center"><h1 class="heading text-capitalize"><%= @tv_season.title %></h1></div>
 	<div class="col-md-6 text-center">
 		<%= link_to image_tag('delete.png', class: 'small-circle'), @tv_season, method: :delete, data: {confirm: "Are you sure?"} %>
 		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_tv_season_path(@tv_season) %>

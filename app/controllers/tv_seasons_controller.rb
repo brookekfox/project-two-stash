@@ -2,7 +2,7 @@ class TvSeasonsController < ApplicationController
 
 	def index
 		@tv_seasons = TvSeason.where(user_id: session['user_id'])
-		Tmdb::Api.key("KEY_HERE")
+		# Tmdb::Api.key("KEY_HERE")
 	end
 
 	def new
@@ -36,7 +36,7 @@ class TvSeasonsController < ApplicationController
 	end
 
 	def destroy
-		# @tv_season = TvSeason.find(params[:id])
+		@tv_season = TvSeason.find(params[:id])
 		@tv_season.destroy
 		redirect_to tv_seasons_path
 	end

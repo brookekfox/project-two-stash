@@ -1,7 +1,7 @@
 <%= render 'users/nav' %>
 
 <div class="row">
-	<div class="col-md-6 text-center"><h1 class="heading"><%= @movie.title %></h1></div>
+	<div class="col-md-6 text-center"><h1 class="heading text-capitalize"><%= @movie.title %></h1></div>
 	<div class="col-md-6 text-center">
 		<%= link_to image_tag('delete.png', class: 'small-circle'), @movie, method: :delete, data: {confirm: "Are you sure?"} %>
 		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_movie_path(@movie) %>
@@ -9,11 +9,23 @@
 	</div>
 </div>
 
+<%# title = '' %>
+<%# @words = @movie.title.split(/\W+/) %>
+<%# @words.each do |w| %>
+	<%# if w == @words[0] %>
+		<%# title = title + w %>
+	<%# else %>
+		<%# title = title + '+' + w %>
+	<%# end %>
+<%# end %>
+
 <div class="info-list">
 	<p class="text-capitalize">Year: <%= @movie.year %></p>
 	<p class="text-capitalize">Director: <%= @movie.director %></p>
 	<p class="text-capitalize">Writer: <%= @movie.writer %></p>
-	<p class="text-capitalize">Rotten Tomatoes Score: <%#= @movie.rotten_tomatoes %>%</p>
+	<!--<p class="text-capitalize">Rotten Tomatoes:-->
+		<%#= HTTParty.get(@base_url+title+@page_limit+@api_key)['movies'][0]['ratings']['critics_score'] %>
+	<!--</p>-->
 	<p class="text-capitalize">Format: <%= @movie.format %></p>
 	<p class="text-capitalize">Loaned Out?: <%= @movie.is_loaned %></p>
 </div>
