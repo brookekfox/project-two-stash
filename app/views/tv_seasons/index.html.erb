@@ -1,35 +1,42 @@
 <%= render 'users/nav' %>
-<h1 class="heading">TV Seasons</h1>
 
-<p class="ruby-link"><%= link_to 'Add a new TV Season', new_tv_season_path %></p>
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">TV Seasons</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('add.png', class: 'small-circle'), new_tv_season_path %></div>
+</div>
 
-<table class="index-list">
-	<thead>
-	<tr>
-		<th>Title</th>
-		<th>Season</th>
-		<th>Year</th>
-		<th>Show Runner</th>
-		<th>Network</th>
-		<th>Format</th>
-		<th>Loaned Out</th>
-		<th colspan="7"></th>
-	</tr>
-	</thead>
-
-	<tbody>
-	<p class="hide"><%= @tv_seasons = @tv_seasons.sort_by { |tv| tv[:title] } %></p>
-	<% @tv_seasons.each do |tv| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+<div class="index-list">
+	<table>
+		<thead>
 		<tr>
-			<td><%= tv.title %></td>
-			<td><%= tv.season %></td>
-			<td><%= tv.year  %></td>
-			<td><%= tv.show_runner  %></td>
-			<td><%= tv.network  %></td>
-			<td><%= tv.format  %></td>
-			<td><%= tv.is_loaned %></td>
-			<td><%= link_to "Delete this tv season!", @tv_season, method: :delete, data: {confirm: "Are you sure?"} %></td>
+			<th>Title</th>
+			<th>Season</th>
+			<th>Year</th>
+			<th>Show Runner</th>
+			<!--<th>Network</th>-->
+			<th>Format</th>
+			<th>Loaned Out</th>
+			<th>Actions</th>
+			<th colspan="8"></th>
 		</tr>
-	<% end %>
-	</tbody>
-</table>
+		</thead>
+
+		<tbody>
+		<p class="hide"><%= @tv_seasons = @tv_seasons.sort_by { |tv| tv[:title] } %></p>
+		<% @tv_seasons.each do |tv| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+			<tr>
+				<td class="text-capitalize">     <%= tv.title %></td>
+				<td class="text-capitalize">     <%= tv.season %></td>
+				<td class="text-capitalize year"><%= tv.year  %></td>
+				<td class="text-capitalize">     <%= tv.show_runner  %></td>
+				<!--<td class="text-capitalize"><%#= tv.network  %></td>-->
+				<td class="text-capitalize">     <%= tv.format  %></td>
+				<td class="text-capitalize">     <%= tv.is_loaned %></td>
+				<td><%= link_to 'View', tv %>
+					  <%= link_to 'Delete', tv, method: :delete, data: {confirm: "Are you sure?"} %>
+					  <%= link_to 'Edit', edit_tv_season_path(tv) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

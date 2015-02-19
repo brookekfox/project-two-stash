@@ -1,34 +1,40 @@
 <%= render 'users/nav' %>
-<h1 class="heading">Movies</h1>
 
-<table class="index-list">
-	<thead>
-	<tr>
-		<th>Title</th>
-		<th>Year</th>
-		<th>Director</th>
-		<th>Writer</th>
-		<th>Rotten Tomatoes Score</th>
-		<th>Format</th>
-		<th>Loaned Out</th>
-		<th>Actions</th>
-		<th colspan="8"></th>
-	</tr>
-	</thead>
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Movies</h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('add.png', class: 'small-circle'), new_movie_path %></div>
+</div>
 
-	<tbody>
-	<% @movies.sort_by { |m| m[:title] }.each do |movie| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+<div class="index-list">
+	<table>
+		<thead>
 		<tr>
-			<td><%= movie.title %></td>
-			<td><%= movie.year %></td>
-			<td><%= movie.director  %></td>
-			<td><%= movie.writer  %></td>
-			<td><%= movie.format  %></td>
-			<td><%= movie.is_loaned %></td>
-			<td><%= link_to 'View', movie %>
-				<%= link_to 'Delete', movie, method: :delete, data: {confirm: "Are you sure?"} %>
-				<%= link_to 'Edit', edit_movie_path(movie) %></td>
+			<th>Title</th>
+			<th>Year</th>
+			<th>Director</th>
+			<th>Writer</th>
+			<!--<th>Rotten Tomatoes Score</th>-->
+			<th>Format</th>
+			<th>Loaned Out</th>
+			<th>Actions</th>
+			<th colspan="8"></th>
 		</tr>
-	<% end %>
-	</tbody>
-</table>
+		</thead>
+
+		<tbody>
+		<% @movies.sort_by { |m| m[:title] }.each do |movie| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+			<tr>
+				<td class="text-capitalize"><%= movie.title %></td>
+				<td class="text-capitalize"><%= movie.year %></td>
+				<td class="text-capitalize"><%= movie.director  %></td>
+				<td class="text-capitalize"><%= movie.writer  %></td>
+				<td class="text-capitalize"><%= movie.format  %></td>
+				<td class="text-capitalize"><%= movie.is_loaned %></td>
+				<td><%= link_to 'View', movie %>
+					<%= link_to 'Delete', movie, method: :delete, data: {confirm: "Are you sure?"} %>
+					<%= link_to 'Edit', edit_movie_path(movie) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

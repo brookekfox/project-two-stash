@@ -14,7 +14,8 @@
 			<th>Publisher</th>
 			<th>Location</th>
 			<th>Loaned Out</th>
-			<th colspan="5"></th>
+			<th>Actions</th>
+			<th colspan="6"></th>
 		</tr>
 		</thead>
 
@@ -22,7 +23,7 @@
 		<% @comics.sort_by { |c| c[:title] }.each do |comic| %>
 			<tr>
 				<td class="text-capitalize"><%= comic.title %></td>
-				<td><%= comic.number %></td>
+				<td class="text-capitalize year"><%= comic.number %></td>
 				<td class="text-capitalize"><%= comic.publisher  %></td>
 				<td class="text-capitalize"><%= comic.comic_box %></td>
 				<td class="text-capitalize"><%= comic.is_loaned %></td>

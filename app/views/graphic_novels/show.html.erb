@@ -6,7 +6,7 @@
 		<%= link_to image_tag('delete.png', class: 'small-circle'), @graphic_novel, method: :delete, data: {confirm: "Are you
 		sure?"} %>
 		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_graphic_novel_path(@graphic_novel) %>
-		<%= link_to image_tag('cancel.png', class: 'small-circle'), user_path(session['user_id']) %>
+		<%= link_to image_tag('cancel.png', class: 'small-circle'), graphic_novels_path(session['user_id']) %>
 	</div>
 </div>
 

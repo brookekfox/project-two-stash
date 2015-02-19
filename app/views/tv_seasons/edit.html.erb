@@ -1,16 +1,21 @@
 <%= render 'users/nav' %>
-<h1 class="heading">Update <%= @tv_season.title %></h1>
+
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Update <%= @tv_season.title %></h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), tv_seasons_path(session['user_id']) %></div>
+</div>
 
 <%= form_for @tv_season do |f| %>
-	Title:  		 <%= f.text_field :title %><br>
-	Season: 		 <%= f.text_field :season %><br>
-	Year:        <%= f.number_field :year %><br>
-	Show Runner: <%= f.text_field :show_runner %><br>
-	Network:     <%= f.text_field :network %><br>
-	Format:      <%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
-	<%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br>
-	Loaned Out?: <%= f.check_box :is_loaned %><br><br>
+	<div class="info-list">
+		Title:  		 <%= f.text_field :title %><br>
+		Season: 		 <%= f.text_field :season %><br>
+		Year:        <%= f.number_field :year %><br>
+		Show Runner: <%= f.text_field :show_runner %><br>
+		<!--Network:     <%#= f.text_field :network %><br>-->
+		Format:      <%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
+								 <%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br>
+		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
-	<%= f.submit 'Update!' %><br>
-	<p class="ruby-link"><%= link_to 'Cancel', tv_seasons_path %></p>
+		<%= f.submit 'Update!' %>
+	</div>
 <% end %>

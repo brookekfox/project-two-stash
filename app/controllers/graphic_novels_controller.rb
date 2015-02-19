@@ -9,7 +9,7 @@ class GraphicNovelsController < ApplicationController
 	end
 
 	def create
-		@graphic_novel = GraphicNovel.create(params.require(:graphic_novel).permit(:title, :number, :publisher, :is_loaned, :user_id))
+		@graphic_novel = GraphicNovel.create(params.require(:graphic_novel).permit(:title, :number, :author, :publisher, :is_loaned, :user_id))
 		if @graphic_novel.save
 			redirect_to graphic_novels_path
 		else
@@ -23,7 +23,7 @@ class GraphicNovelsController < ApplicationController
 
 	def update
 		@graphic_novel = GraphicNovel.find(params[:id])
-		if @graphic_novel.update_attributes(params.require(:graphic_novel).permit(:title, :number, :publisher, :is_loaned, :user_id))
+		if @graphic_novel.update_attributes(params.require(:graphic_novel).permit(:title, :number, :author, :publisher, :is_loaned, :user_id))
 			redirect_to graphic_novels_path
 		else
 			render 'edit'

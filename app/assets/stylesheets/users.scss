@@ -12,12 +12,12 @@ body {
   width: 100%;
 }
 .heading {
-  font-size: 72pt;
+  font-size: 60pt;
   font-family: $heading-font;
   color: $light-gray;
 }
 h2 {
-  font-size: 52pt;
+  font-size: 42pt;
   font-family: $heading-font;
   color: $light-gray;
 }
@@ -26,13 +26,13 @@ h2 {
   border-radius: 15px;
   padding: 5%;
   margin: 10% auto;
-  width: 90%;
+  width: 95%;
   background-color: rgba(255,0,127,.6);
   color: $light-gray;
 }
 th {
   font-family: $body-font;
-  font-size: 24pt;
+  font-size: 20pt;
   padding: 1%;
   width: 250px;
   vertical-align: bottom;
@@ -40,30 +40,30 @@ th {
 }
 td {
   font-family: $body-font;
-  font-size: 16pt;
-  padding: 1%;
+  font-size: 14pt;
+  padding: 10%;
   width: 250px;
   vertical-align: bottom;
 }
-.ruby-link {
-  color: $light-gray;
-  font-family: $body-font;
-  font-size: 14pt;
-  border: 2px solid $light-gray;
-  border-radius: 50%;
-  background: rgba(240,240,240,.7);
-  padding: 2%;
-  width: 100px;
-  height: 100px;
-}
+//.ruby-link {
+//  color: $light-gray;
+//  font-family: $body-font;
+//  font-size: 14pt;
+//  border: 2px solid $light-gray;
+//  border-radius: 50%;
+//  background: rgba(240,240,240,.7);
+//  padding: 2%;
+//  width: 100px;
+//  height: 100px;
+//}
 .ruby-form {
   border: 4px double $light-gray;
   border-radius: 40px;
   padding: 5%;
   margin: 10% auto;
-  width: 80%;
+  width: 70%;
   background-color: rgba(255,0,127,.6);
-  color: $light-gray;
+  color: darkblue;
   font-family: $body-font;
   font-size: 14pt;
   text-align: center;
@@ -90,11 +90,11 @@ td {
   font-size: 18pt;
   width: 70%;
 }
-.nav-bar {
-  height: 250px;
-  width: 100%;
-  background-color: #ffffff;
-}
+//.nav-bar {
+//  height: 250px;
+//  width: 100%;
+//  background-color: #ffffff;
+//}
 .circles {
   height: 300px;
 }

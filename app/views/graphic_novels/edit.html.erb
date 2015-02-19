@@ -2,8 +2,7 @@
 
 <div class="row">
 	<div class="col-md-6 text-center"><h1 class="heading">Update <%= @graphic_novel.title %></h1></div>
-	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), graphic_novels_path(session['user_id'])
-	%></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), graphic_novels_path(session['user_id']) %></div>
 </div>
 
 <%= form_for @graphic_novel do |f| %>

@@ -1,17 +1,19 @@
 <%= render 'users/nav' %>
-<h1 class="heading"><%= @movie.title %></h1>
 
-<div class="info-list">
-	<p>Year: <%= @movie.year %></p>
-	<p>Director: <%= @movie.director %></p>
-	<p>Writer: <%= @movie.writer %></p>
-	<p>Rotten Tomatoes Score: <%= @movie.rotten_tomatoes %></p>
-	<p>Format: <%= @movie.format %></p>
-	<p>Loaned Out?: <%= @movie.is_loaned %></p>
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading"><%= @movie.title %></h1></div>
+	<div class="col-md-6 text-center">
+		<%= link_to image_tag('delete.png', class: 'small-circle'), @movie, method: :delete, data: {confirm: "Are you sure?"} %>
+		<%= link_to image_tag('edit.png', class: 'small-circle'), edit_movie_path(@movie) %>
+		<%= link_to image_tag('cancel.png', class: 'small-circle'), movies_path(session['user_id']) %>
+	</div>
 </div>
 
-<br><br>
-<p class="link">
-	<%= link_to 'Delete this movie!', @movie, method: :delete, data: {confirm: "Are you sure?"} %><br>
-	<%= link_to 'Edit this movie!', edit_movie_path(@movie) %><br>
-</p>
+<div class="info-list">
+	<p class="text-capitalize">Year: <%= @movie.year %></p>
+	<p class="text-capitalize">Director: <%= @movie.director %></p>
+	<p class="text-capitalize">Writer: <%= @movie.writer %></p>
+	<p class="text-capitalize">Rotten Tomatoes Score: <%#= @movie.rotten_tomatoes %>%</p>
+	<p class="text-capitalize">Format: <%= @movie.format %></p>
+	<p class="text-capitalize">Loaned Out?: <%= @movie.is_loaned %></p>
+</div>

@@ -25,7 +25,6 @@
 		<tbody>
 		<% @books.sort_by { |b| b[:title] }.each do |book| %>
 			<tr>
-				<!--<td><%#= book.user.name %></td>-->
 				<td class="text-capitalize"><%= book.title %></td>
 				<td class="text-capitalize"><%= book.author_first %> <%= book.author_last %></td>
 				<td class="text-capitalize"><%= book.year %></td>
