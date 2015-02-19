@@ -1,4 +1,16 @@
-<h1 class="heading">Hey dum dum!</h1>
+<div class="row">
+	<div class="col-md-12 text-center"><h1 class="heading">Hey, dum dum! Sign up!</h1></div>
+	<!--<div class="col-md-6 text-center"></div>-->
+</div>
+
+<% if @user.errors.any? %>
+	<div id="error-explanation">
+		Try again, dum dum!<br>
+		<% @user.errors.full_messages.each do |msg| %>
+			<%= msg %><br>
+		<% end %>
+	</div>
+<% end %>
 
 <div class="ruby-form">
 	<%= form_for @user do |f| %>
@@ -6,10 +18,10 @@
 		Email:            <%= f.text_field :email %><br><br>
 		New Password:     <%= f.password_field :password %><br>
 		Confirm Password: <%= f.password_field :password_confirmation %><br>
-		<!--Profile picture:  <%#= f.file_field :avatar %><br><br>-->
 
 		<%= f.submit %>
 	<% end %>
-	<%= link_to 'I\'m already a user!', new_sessions_path %>
 
+	<%= link_to 'I\'m already a user!', new_sessions_path %>
 </div>
+

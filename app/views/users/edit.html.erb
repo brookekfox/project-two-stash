@@ -1,4 +1,7 @@
-<h1 class="heading">Hey, <%= @user.name %>!</h1>
+<div class="row">
+	<div class="col-md-6 text-center"><h1 class="heading">Hey <%= @user.name %></h1></div>
+	<div class="col-md-6 text-center"><%= link_to image_tag('cancel.png', class: 'small-circle'), user_path(session['user_id']) %></div>
+</div>
 
 <div class="ruby-form">
 	<%= form_for @user do |f| %>
