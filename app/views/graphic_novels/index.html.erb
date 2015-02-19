@@ -19,7 +19,7 @@
 		</thead>
 
 		<tbody>
-		<% @graphic_novels.sort_by { |gn| gn[:title] }.each do |graphic| %>
+		<% @graphic_novels.sort_by { |gn| gn[:title].downcase }.each do |graphic| %>
 			<tr>
 				<td class="text-capitalize"><%= graphic.title %></td>
 				<td class="text-capitalize"><%= graphic.author %></td>

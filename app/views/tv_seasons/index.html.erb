@@ -13,7 +13,6 @@
 			<th>Season</th>
 			<th>Year</th>
 			<th>Show Runner</th>
-			<!--<th>Network</th>-->
 			<th>Format</th>
 			<th>Loaned Out</th>
 			<th>Actions</th>
@@ -22,15 +21,13 @@
 		</thead>
 
 		<tbody>
-		<p class="hide"><%= @tv_seasons = @tv_seasons.sort_by { |tv| tv[:title] } %></p>
-		<% @tv_seasons.each do |tv| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+		<% @tv_seasons.sort_by { |t| t[:title].downcase }.each do |tv| %>
 			<tr>
 				<td class="text-capitalize">     <%= tv.title %></td>
 				<td class="text-capitalize">     <%= tv.season %></td>
-				<td class="text-capitalize year"><%= tv.year  %></td>
-				<td class="text-capitalize">     <%= tv.show_runner  %></td>
-				<!--<td class="text-capitalize"><%#= tv.network  %></td>-->
-				<td class="text-capitalize">     <%= tv.format  %></td>
+				<td class="text-capitalize">     <%= tv.year %></td>
+				<td class="text-capitalize">     <%= tv.show_runner %></td>
+				<td class="text-capitalize">     <%= tv.format %></td>
 				<td class="text-capitalize">     <%= tv.is_loaned %></td>
 				<td><%= link_to 'View', tv %>
 					  <%= link_to 'Delete', tv, method: :delete, data: {confirm: "Are you sure?"} %>

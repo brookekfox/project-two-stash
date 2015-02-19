@@ -2,6 +2,7 @@ class TvSeasonsController < ApplicationController
 
 	def index
 		@tv_seasons = TvSeason.where(user_id: session['user_id'])
+		Tmdb::Api.key("KEY_HERE")
 	end
 
 	def new

@@ -23,7 +23,7 @@
 		</thead>
 
 		<tbody>
-		<% @books.sort_by { |b| b[:title] }.each do |book| %>
+		<% @books.sort_by { |b| b[:title].downcase }.each do |book| %>
 			<tr>
 				<td class="text-capitalize"><%= book.title %></td>
 				<td class="text-capitalize"><%= book.author_first %> <%= book.author_last %></td>

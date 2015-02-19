@@ -13,7 +13,7 @@
 			<th>Year</th>
 			<th>Director</th>
 			<th>Writer</th>
-			<!--<th>Rotten Tomatoes Score</th>-->
+			<th>Rotten Tomatoes</th>
 			<th>Format</th>
 			<th>Loaned Out</th>
 			<th>Actions</th>
@@ -22,12 +22,26 @@
 		</thead>
 
 		<tbody>
-		<% @movies.sort_by { |m| m[:title] }.each do |movie| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+		<% @movies.sort_by { |m| m[:title].downcase }.each do |movie| %> <!-- no equal sign in the embedded ruby tag around a loop -->
+			<% @title = "" %>
+			<% @words = movie.title.split(/\W+/) %>
+			<% @words.each do |w| %>
+				<% if w == @words[0] %>
+					<% @title = @title + w %>
+				<% else %>
+					<% @title = @title + '+' + w %>
+				<% end %>
+				<%#= @title %>
+			<% end %>
+
 			<tr>
 				<td class="text-capitalize"><%= movie.title %></td>
 				<td class="text-capitalize"><%= movie.year %></td>
 				<td class="text-capitalize"><%= movie.director  %></td>
 				<td class="text-capitalize"><%= movie.writer  %></td>
+				<td class="text-capitalize">
+					<%= HTTParty.get(@base_url+@title+@page_limit+@api_key)['movies'][0]['ratings']['critics_score'] %>%
+				</td>
 				<td class="text-capitalize"><%= movie.format  %></td>
 				<td class="text-capitalize"><%= movie.is_loaned %></td>
 				<td><%= link_to 'View', movie %>

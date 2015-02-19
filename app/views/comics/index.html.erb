@@ -20,7 +20,7 @@
 		</thead>
 
 		<tbody>
-		<% @comics.sort_by { |c| c[:title] }.each do |comic| %>
+		<% @comics.sort_by { |c| c[:title].downcase }.each do |comic| %>
 			<tr>
 				<td class="text-capitalize"><%= comic.title %></td>
 				<td class="text-capitalize year"><%= comic.number %></td>
