@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 #this needs to be commented out to run on a local server
-config.assets.initialize_on_precompile = false
+# config.assets.initialize_on_precompile = false
 
 module Stash
   class Application < Rails::Application
