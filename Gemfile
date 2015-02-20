@@ -38,9 +38,6 @@ gem 'paperclip', '~> 4.2'
 gem 'httparty', '~> 0.11.0'
 gem 'themoviedb'
 
-group :production do
-	gem 'rails_12factor'
-end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,5 +50,9 @@ group :development, :test do
   # gem 'spring'
 
 	gem 'better_errors'
+end
+
+group :production do
+	gem 'rails_12factor'
 end
 
