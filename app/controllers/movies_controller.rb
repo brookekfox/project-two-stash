@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
 	def index
 		@movies = Movie.where(user_id: session['user_id'])
 		@base_url   = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?q="
-		@page_limit = "&page_limit=10"
-		@api_key    = "&apikey="+ENV['RT_API_KEY']
+		@page_limit = "&page_limit=10&apikey="
+		@api_key    = ENV['RT_API_KEY']
 	end
 
 	def new
