@@ -149,3 +149,22 @@ input {
   background-color: rgba(240,240,240,.2);
   border: 2px solid darkblue;
 }
+.email-header-image {
+  margin: 0 auto;
+  height: 200px;
+}
+.email-header {
+  font-family: $heading-font;
+  font-size: 42pt;
+}
+.email-body {
+  font-family: $body-font;
+  font-size: 20pt;
+}
+.email-signature {
+  font-family: $heading-font;
+  font-size: 20pt;
+}
+.email {
+  background-color: $light-gray;
+}

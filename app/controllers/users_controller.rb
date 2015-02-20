@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar))
 		if @user.save
+			UserMailer.welcome(@user).deliver
 			redirect_to new_sessions_path
 		else
 			render 'new'
@@ -39,4 +40,6 @@ class UsersController < ApplicationController
 		@user.destroy
 		redirect_to users_path
 	end
+
+
 end
