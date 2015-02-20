@@ -7,12 +7,12 @@
 
 <%= form_for @comic do |f| %>
 	<div class="info-list">
-		Title:  		 <%= f.text_field :title %><br>
-		Number:      <%= f.number_field :number %><br>
-		Publisher:   <%= f.text_field :publisher %><br>
-		Location:    <%= f.text_field :comic_box %><br>
-		Loaned Out?: <%= f.check_box :is_loaned %>
-		<br><br>
+		<%= f.text_field :title, placeholder: 'Title' %><br>
+		<%= f.number_field :number, placeholder: 'Number' %><br>
+		<%= f.text_field :publisher, placeholder: 'Publisher' %><br>
+		<%= f.text_field :comic_box, placeholder: 'Location' %><br><br>
+
+		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
 		<%= f.submit 'Update!' %><br>
 	</div>

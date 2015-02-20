@@ -7,15 +7,16 @@
 
 <%= form_for @tv_season do |f| %>
 	<div class="info-list">
-		Title:  		 <%= f.text_field :title %><br>
-		Season: 		 <%= f.text_field :season %><br>
-		Year:        <%= f.number_field :year %><br>
-		Show Runner: <%= f.text_field :show_runner %><br>
-		<!--Network:     <%#= f.text_field :network %><br>-->
-		Format:      <%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
-								 <%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br>
+		<%= f.text_field :title,      placeholder: 'Title' %><br>
+		<%= f.text_field :season,     placeholder: 'Season' %><br>
+		<%= f.number_field :year,     placeholder: 'Year' %><br>
+		<%= f.text_field :show_runner, placeholder: 'Show Runner' %><br><br>
+
+		<%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
+		<%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br><br>
+
 		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
-		<%= f.submit 'Update!' %>
+		<%= f.submit 'Add this TV season!' %>
 	</div>
 <% end %>

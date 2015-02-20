@@ -7,15 +7,15 @@
 
 <%= form_for @movie do |f| %>
 	<div class="info-list">
-		User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
-		Title:  		 <%= f.text_field :title %><br>
-		Year:        <%= f.number_field :year %><br>
-		Director:    <%= f.text_field :director %><br>
-		Writer:      <%= f.text_field :writer %><br>
-		Format:      <%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
-								 <%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br>
-		Loaned Out?: <%= f.check_box :is_loaned %>
-		<br><br>
+		<%= f.collection_select :user_id, User.all, :id, :name, include_blank: 'User' %><br>
+		<%= f.text_field :title,    placeholder: 'Title' %><br>
+		<%= f.number_field :year,   placeholder: 'Year' %><br>
+		<%= f.text_field :director, placeholder: 'Director' %><br>
+		<%= f.text_field :writer,   placeholder: 'Writer' %><br><br>
+			<%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
+			<%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br><br>
+
+		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
 		<%= f.submit 'Add this movie!' %><br>
 	</div>

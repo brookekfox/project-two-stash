@@ -7,12 +7,12 @@
 
 <%= form_for @graphic_novel do |f| %>
 	<div class="info-list">
-		Title:  		 <%= f.text_field :title %><br>
-		Author:      <%= f.text_field :author %><br>
-		Number:      <%= f.number_field :number %><br>
-		Publisher:   <%= f.text_field :publisher %><br>
-		Loaned Out?: <%= f.check_box :is_loaned %>
-		<br><br>
+		<%= f.text_field :title,     placeholder: 'Title' %><br>
+		<%= f.text_field :author,    placeholder: 'Author' %><br>
+		<%= f.number_field :number,  placeholder: 'Number' %><br>
+		<%= f.text_field :publisher, placeholder: 'Publisher' %><br><br>
+
+		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
 		<%= f.submit 'Update!' %><br>
 	</div>

@@ -14,6 +14,7 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
 			<ul class="nav navbar-nav">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -24,10 +25,11 @@
 						<li><%= link_to image_tag('comics.png', class: 'dropdown-logo'),  comics_path(session['user_id']) %></li>
 						<li><%= link_to image_tag('graphic.png', class: 'dropdown-logo'), graphic_novels_path(session['user_id']) %></li>
 						<li><%= link_to image_tag('movies.png', class: 'dropdown-logo'),  movies_path(session['user_id']) %></li>
-						<li><%= link_to image_tag('tv.png', class: 'dropdown-logo'),   tv_seasons_path(session['user_id']) %></li>
+						<li><%= link_to image_tag('tv.png', class: 'dropdown-logo'),      tv_seasons_path(session['user_id']) %></li>
 					</ul>
 				</li>
 			</ul>
+
 			<!--<form class="navbar-form navbar-left" role="search">-->
 			<!--<div class="form-group">-->
 			<!--<input type="text" class="form-control" placeholder="Search">-->

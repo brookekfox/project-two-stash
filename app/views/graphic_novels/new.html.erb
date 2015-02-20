@@ -7,14 +7,14 @@
 
 <%= form_for @graphic_novel do |f| %>
 	<div class="info-list">
-		User:        <%= f.collection_select :user_id, User.all, :id, :name, include_blank: '' %><br>
-		Title:  		 <%= f.text_field :title %><br>
-		Author:      <%= f.text_field :author %><br>
-		Number:      <%= f.number_field :number %><br>
-		Publisher:   <%= f.text_field :publisher %><br>
-		Loaned Out?: <%= f.check_box :is_loaned %>
-		<br><br>
+		<%= f.collection_select :user_id, User.all, :id, :name, include_blank: 'User' %><br>
+		<%= f.text_field :title,     placeholder: 'Title' %><br>
+		<%= f.text_field :author,    placeholder: 'Author' %><br>
+		<%= f.number_field :number,  placeholder: 'Number' %><br>
+		<%= f.text_field :publisher, placeholder: 'Publisher' %><br><br>
 
-		<%= f.submit 'Add this graphic novel!' %><br>
+		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
+
+		<%= f.submit 'Update!' %><br>
 	</div>
 <% end %>

@@ -7,14 +7,12 @@
 
 <%= form_for @book do |f| %>
 	<div class="info-list">
-		Title:  		 <%= f.text_field :title %><br>
-		Author:      <%= f.text_field :author_first %>
-		             <%= f.text_field :author_last %><br>
-		Year:        <%= f.number_field :year %><br>
-		Loaned Out?: <%= f.check_box :is_loaned %>
-		<%#= f.radio_button :loaned_out, 'No' %><%#= f.label :loaned_out, 'No', value: 'No' %>
-		<%#= f.radio_button :loaned_out, 'Yes' %><%#= f.label :loaned_out, 'Yes', value: 'Yes' %>
-		<br><br>
+		<%= f.text_field :title,        placeholder: 'Title' %><br>
+		<%= f.text_field :author_first, placeholder: 'Author first name' %>
+		<%= f.text_field :author_last,  placeholder: 'last name' %><br>
+		<%= f.number_field :year,       placeholder: 'Year' %><br><br>
+
+		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
 		<%= f.submit 'Update!' %><br>
 	</div>

@@ -5,11 +5,9 @@
 
 <div class="ruby-form">
 	<%= form_for @user do |f| %>
-		Name:             <%= f.text_field :name %><br>
-		Email:            <%= f.text_field :email %><br><br>
-		New Password:     <%= f.password_field :password %><br>
-		Confirm Password: <%= f.password_field :password_confirmation %><br>
-		<!--Profile picture:  <%#= f.file_field :avatar %><br><br>-->
+		<%= f.text_field :name,         placeholder: 'Name' %><br>
+		<%= f.text_field :email,        placeholder: 'Email' %><br><br>
+		<%= f.password_field :password, placeholder: 'Password' %><br>
 
 		<%= f.submit %>
 	<% end %>
