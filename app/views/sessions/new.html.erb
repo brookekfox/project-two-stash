@@ -4,8 +4,8 @@
 
 <div class="ruby-form">
 	<%= form_for @user, url: { controller: 'sessions', action: 'create' } do |f| %>
-		Email:    <%= f.text_field :email %><br />
-		Password: <%= f.password_field :password %><br /><br />
+		<%= f.text_field :email, :placeholder => "email" %><br>
+		<%= f.password_field :password, :placeholder => "password" %><br><br>
 
 		<%= f.submit 'Log In' %>
 	<% end %>

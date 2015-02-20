@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip', '~> 4.2'
 gem 'httparty', '~> 0.11.0'
 gem 'themoviedb'
+gem 'figaro'
 
 
 group :development, :test do
