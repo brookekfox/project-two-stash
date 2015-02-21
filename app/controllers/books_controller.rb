@@ -18,6 +18,7 @@ class BooksController < ApplicationController
 		@book = Book.create(params.require(:book).permit(:title, :author_first, :author_last, :year, :genre, :is_loaned,
 																										 :user_id))
 		if @book.save
+			UserMailer.new_book(@book).deliver
 			redirect_to books_path
 		else
 			render 'new'
