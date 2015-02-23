@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar))
 		if @user.save
-			UserMailer.welcome(@user).deliver
+			# UserMailer.welcome(@user).deliver
 			redirect_to new_sessions_path
 		else
 			render 'new'
