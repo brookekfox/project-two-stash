@@ -3,6 +3,7 @@
 
 Manage your personal library of books, movies, tv seasons, comics, and graphic novels.
 
-Hosted on [Heroku](https://brooke-stash.herokuapp.com/)
+Hosted on [Heroku](https://brooke-stash.herokuapp.com/).
 
-![image](brookekfox.github.com/project-two-stash/app/assets/home-screenshot.png)
+
+![My image](brookekfox.github.com/project-two-stash/app/assets/home-screenshot.png)

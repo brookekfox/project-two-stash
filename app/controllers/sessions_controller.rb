@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 	def new
 		@user = User.new #the new session form is based on a user
 	end
+
 	def create
 		#find the user by their email
 		user = User.where(email: params[:user][:email]).first
@@ -13,8 +14,10 @@ class SessionsController < ApplicationController
 			redirect_to new_sessions_path
 		end
 	end
+
 	def destroy
 		session.destroy
 		redirect_to new_sessions_path
 	end
+
 end

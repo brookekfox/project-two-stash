@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-	resources :books, :movies, :tv_seasons, :comics, :graphic_novels
-	resources :users
+	resources :books, :movies, :tv_seasons, :comics, :graphic_novels, :users
 	resource :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -12,8 +12,8 @@
 		<%= f.number_field :year,   placeholder: 'Year' %><br>
 		<%= f.text_field :director, placeholder: 'Director' %><br>
 		<%= f.text_field :writer,   placeholder: 'Writer' %><br><br>
-			<%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
-			<%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br><br>
+		<%= f.radio_button :format, 'DVD' %><%= f.label :format, 'DVD', value: 'dvd' %>
+		<%= f.radio_button :format, 'Blu-Ray' %><%= f.label :format, 'Blu-Ray', value: 'bluray' %><br><br>
 
 		Loaned Out?: <%= f.check_box :is_loaned %><br><br>
 
