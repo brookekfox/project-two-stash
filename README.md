@@ -1,4 +1,4 @@
-# Inventory app built in Ruby on Rails with a PostgreSQL database
+# Personal inventory app built in Ruby on Rails with a PostgreSQL database
 
 
 #####Manage your personal library of books, movies, tv seasons, comics, and graphic novels.
